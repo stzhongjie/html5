@@ -30,21 +30,21 @@ document.addEventListener("WeixinJSBridgeReady", function () {
 }, false);
 ```
 
-*load()*过之后，再调用play()即可听到音效。
+*load()过之后，再调用play()即可听到音效。
 
 ## 3. ios系统不支持动画暂停样式（*animation-play-state*）
-H5页面一般都会有BGM，也会提供一个旋转的音乐图标供用户开启关闭音乐。我们希望当用户点击音乐按钮时图标停止旋转，再点图标顺着之前停止的位置继续跑动画。*animation-play-state*是最简便的方式，然而，ios不支持。
+H5页面一般都会有BGM，也会提供一个旋转的音乐图标供用户开启关闭音乐。我们希望当用户点击音乐按钮时图标停止旋转，再点图标顺着之前停止的位置继续跑动画。*animation-play-state 是最简便的方式，然而，ios不支持。
 
 目前的解决方案是：音乐图标负责跑动画，图标父级元素负责记录停止时的转动值。
 
-####html
+#### html
 ```
 <div class="music">
     <img class="musicImg" src="/images/music.png">
 </div>
 ```
 
-####sass
+#### sass
 ```
 .music {
   position: absolute;
@@ -80,7 +80,7 @@ H5页面一般都会有BGM，也会提供一个旋转的音乐图标供用户开
   }
 }
 ```
-####JS
+#### JS
 ```
 var $img = $('.musicImg')
   var music = document.getElementById('music');
